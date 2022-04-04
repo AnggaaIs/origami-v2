@@ -1,0 +1,52 @@
+// export const PermissionsList = {
+//   CREATE_INSTANT_INVITE: "Create Instant Invite",
+//   "KickMembers": "Kick Members",
+//   banMembers: "Ban Members",
+//   administrator: "Administrator",
+//   manageChannels: "Manage Channels",
+//   manageGuild: "Manage Guild",
+//   addReactions: "Add Reactions",
+//   viewAuditLog: "View Audit Log",
+//   voicePrioritySpeaker: "Voice Priority Speaker",
+//   voiceStream: "Voice Stream",
+//   viewChannel: "View Channel",
+//   sendMessages: "Send Messages",
+//   sendTTSMessages: "Send TTS Messages",
+//   manageMessages: "Manage Messages",
+//   embedLinks: "Embed Links",
+//   attachFiles: "Attach Files",
+//   readMessageHistory: "Read Message History",
+//   mentionEveryone: "Mention Everyone",
+//   useExternalEmojis: "Use External Emojis",
+//   viewGuildInsights: "View Guild Insights",
+//   voiceConnect: "Voice Connect",
+//   voiceSpeak: "Voice Speak",
+//   voiceMuteMembers: "Voice Mute Members",
+//   voiceDeafenMembers: "Voice Deafen Members",
+//   voiceMoveMembers: "Voice Move Members",
+//   voiceUseVAD: "Voice Use VAD",
+//   changeNickname: "Change Nickname",
+//   manageNicknames: "Manage Nicknames",
+//   manageRoles: "Manage Roles",
+//   manageWebhooks: "Manage Webhooks",
+//   manageEmojisAndStickers: "Manage Emojis And Stickers",
+//   useApplicationCommands: "Use Application Commands",
+//   voiceRequestToSpeak: "Voice Request To Speak",
+//   manageEvents: "Manage Events",
+//   manageThreads: "Manage Threads",
+//   createPublicThreads: "Create Public Threads",
+//   createPrivateThreads: "Create Private Threads",
+//   useExternalStickers: "Use External Stickers",
+//   sendMessagesInThreads: "Send Messages In Threads",
+//   startEmbeddedActivities: "Start Embedded Activities",
+//   moderateMembers: "Moderate Members",
+// };
+
+import { ColorResolvable } from "discord.js";
+
+export const Colors = {
+  general: "#ffffff" as ColorResolvable,
+  error: "#ff0000" as ColorResolvable,
+};
+
+Object.freeze(Colors);

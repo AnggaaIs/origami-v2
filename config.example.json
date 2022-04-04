@@ -1,0 +1,23 @@
+{
+    "botConfigs": {
+      "token": "BOT_TOKEN",
+      "prefix": "_",
+      "lavalink" : {
+        "nodes": [
+          {
+            "identifier": "OrigamiL1",
+            "host": "0.0.0.0",
+            "port": 2333,
+            "password": "youshallnotpass",
+            "retryDelay": 15000
+          }
+        ]
+      }
+    },
+    "otherConfigs": {
+      "owners": ["YOUR_ID"],
+      "guild_id": "GUILD_ID - FOR DEVELOPMENT",
+      "mongo": "mongodb://localhost:27017/origami"
+    }
+  }
+  
