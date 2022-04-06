@@ -19,7 +19,7 @@ export default class SkipCommand extends Command {
       options: [
         {
           name: "track",
-          description: "Masukan nomor track.",
+          description: "Enter the track number.",
           type: ApplicationCommandOptionTypes.NUMBER,
           required: false,
         },
