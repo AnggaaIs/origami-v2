@@ -28,11 +28,16 @@ export default class LeaveCommand extends Command {
     if (players && players.voiceChannel) {
       const clientVoiceChannel = ctx.interaction.guild.channels.cache.get(players.voiceChannel);
       if (channel.id !== players.voiceChannel)
-        return ctx.sendMessage(`You must be on the voice channel ${clientVoiceChannel.name} to run this command!`);
+        return ctx.sendMessage(`You must be on the voice channel ${clientVoiceChannel.name} to run this command!`, {
+          ephemeral: true,
+        });
     }
+
+    await ctx.interaction.deferReply();
 
     if (players.state === "CONNECTED") players.disconnect();
 
-    ctx.sendMessage(`Leaved voice channel \`${channel.name}\`.`, { timeout: 15000 });
+    await ctx.interaction.followUp(`Leaved voice channel \`${channel.name}\`.`);
+    setTimeout(async () => await ctx.interaction.deleteReply().catch(() => {}), 15000);
   }
 }

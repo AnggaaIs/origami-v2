@@ -6,6 +6,7 @@ import CommandContext from "@origami/classes/CommandContext";
 import Command from "@origami/classes/Command";
 import Collection from "@discordjs/collection";
 import { toTitleCase } from "../utils";
+import { Colors } from "../utils/Constants";
 
 export default class InteractionCreateEvent extends Event {
   private log = new Logger(this.constructor.name);

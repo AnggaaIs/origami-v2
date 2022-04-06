@@ -28,9 +28,12 @@ export default class JoinCommand extends Command {
         return ctx.sendMessage(`I've been connected to that voice channel.`, { ephemeral: true });
 
       if (channel.id !== players.voiceChannel) {
-        if (players.playing || players.queue.length !== 0) return ctx.sendMessage(`There are songs in Queue, you can't do that!`);
+        if (players.playing || players.queue.length !== 0)
+          return ctx.sendMessage(`There are songs in Queue, you can't do that!`, { ephemeral: true });
       }
     }
+
+    await ctx.interaction.deferReply();
 
     const player = this.client.erela.create({
       guild: ctx.interaction.guildId,
@@ -41,13 +44,13 @@ export default class JoinCommand extends Command {
 
     if (players && players.state === "DISCONNECTED") {
       players.setVoiceChannel(channel.id);
-      players.setTextChannel(ctx.interaction.channelId);
       players.connect();
     }
     if (player.state !== "CONNECTED") player.connect();
     if (players && players.state === "CONNECTED") {
       if (!players.playing || players.queue.length === 0) player.setVoiceChannel(channel.id);
     }
-    ctx.sendMessage(`Joined voice vhannel \`${channel.name}\`.`, { timeout: 15000 });
+    ctx.interaction.followUp(`Joined voice vhannel \`${channel.name}\`.`);
+    setTimeout(async () => await ctx.interaction.deleteReply().catch(() => {}), 15000);
   }
 }

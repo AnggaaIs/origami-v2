@@ -69,7 +69,9 @@ export default class PlayCommand extends Command {
     if (player && player.voiceChannel) {
       const clientVoiceChannel = ctx.interaction.guild.channels.cache.get(player.voiceChannel);
       if (channel.id !== clientVoiceChannel.id)
-        return ctx.sendMessage(`You must be on the voice channel ${clientVoiceChannel.name} to run this command!`);
+        return ctx.sendMessage(`You must be on the voice channel ${clientVoiceChannel.name} to run this command!`, {
+          ephemeral: true,
+        });
     }
 
     await ctx.interaction.deferReply();
